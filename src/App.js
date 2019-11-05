@@ -3,13 +3,14 @@ import Recipe from './recipe';
 import './App.css';
 
 const App = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('chicken')
 
   const APP_ID = process.env.APP_ID;
   const APP_KEY = process.env.APP_KEY;
-  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+  const exampleReq = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
 
-  const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
 
   useEffect( () => {
     getRecipes();
@@ -24,11 +25,17 @@ const App = () => {
 
   const updateSearch = e => {
     setSearch(e.target.value);
+    console.log(search);
+  }
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
   }
 
   return(
     <div className='App'>
-      <form className="search-form">
+      <form onSubmit={getSearch} className="search-form">
         <input 
         className="search-bar" 
         type='text' 
