@@ -7,7 +7,7 @@ const App = () => {
   const APP_ID = process.env.APP_ID;
   const APP_KEY = process.env.APP_KEY;
 
-  const example = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`
+  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
 
 
   return(
