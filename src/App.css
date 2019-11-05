@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   min-height: 100vh;
   background-color: lightslategray;
 }
@@ -22,4 +21,10 @@
   border: none;
   padding: 10px 20px;
   color: white;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
