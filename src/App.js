@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect( () => {
     getRecipes();
-  }, [])
+  }, [query])
 
   const getRecipes = async () => {
     const response = await fetch(exampleReq);
@@ -25,12 +25,12 @@ const App = () => {
 
   const updateSearch = e => {
     setSearch(e.target.value);
-    console.log(search);
   }
 
   const getSearch = e => {
     e.preventDefault();
     setQuery(search);
+    setSearch('');
   }
 
   return(
@@ -49,7 +49,8 @@ const App = () => {
         key={recipe.recipe.label}
         title={recipe.recipe.label} 
         calories={recipe.recipe.calories} 
-        image = {recipe.recipe.image}
+        image={recipe.recipe.image}
+        ingredients={recipe.recipe.ingredients}
         />
       ))}
     </div>
