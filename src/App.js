@@ -29,7 +29,10 @@ const App = () => {
       </form>
       {/* <h1 onClick={() => setCounter(counter + 1)}>{counter}</h1> */}
       {recipes.map(recipe => (
-        <Recipe title={recipe.recipe.label} calories={recipe.recipe.calories} 
+        <Recipe 
+        key={recipe.recipe.label}
+        title={recipe.recipe.label} 
+        calories={recipe.recipe.calories} 
         image = {recipe.recipe.image}
         />
       ))}
