@@ -7,11 +7,15 @@ const App = () => {
   const APP_KEY = process.env.APP_KEY;
   const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
 
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() =>{
-    console.log('Effect has been run');
+  useEffect( () =>{
+    
   }, [])
+
+  const getRecipes = async () => {
+    const response = await fetch(exampleReq);
+    const data = response.json();
+    console.log(data);
+  }
 
   return(
     <div className='App'>
