@@ -18,6 +18,7 @@ const App = () => {
     const response = await fetch(exampleReq);
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data.hits);
   }
 
   return(
@@ -27,6 +28,11 @@ const App = () => {
         <button className="search-button" type='submit'>Search</button>
       </form>
       {/* <h1 onClick={() => setCounter(counter + 1)}>{counter}</h1> */}
+      {recipes.map(recipe => (
+        <Recipe title={recipe.recipe.label} calories={recipe.recipe.calories} 
+        image = {recipe.recipe.image}
+        />
+      ))}
     </div>
   );
 }
