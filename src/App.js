@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Recipe from './recipe';
 import './App.css';
 
 const App = () => {
