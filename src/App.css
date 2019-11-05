@@ -40,8 +40,10 @@
 
 .images {
   border-radius: 10px;
-  
   width: 100px;
   height: 100px;
+}
 
+ol {
+  list-style-type: none;
 }
